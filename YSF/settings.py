@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'ysf_backend',
     'rest_framework',
     'corsheaders',
-    'knox',
+    # 'knox',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication')
+    # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication')
 }
