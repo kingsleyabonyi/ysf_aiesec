@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'YSF.wsgi.application'
+WSGI_APPLICATION = 'ysf_backend.wsgi.application'
 
 
 # Database
