@@ -126,6 +126,17 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://localhost:8080',
+]
+
+CORS_ALLOW_METHOD = [
+    'GET', 'POST', 'PUT', 'DELETE'
+]
+
 
 REST_FRAMEWORK = {
     # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication')
