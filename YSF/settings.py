@@ -51,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'YSF.urls'
@@ -135,12 +137,6 @@ CORS_ORIGIN_WHITELIST = [
 
 CORS_ALLOW_METHOD = [
     'GET', 'POST', 'PUT', 'DELETE'
-]
-
-MIDDLEWARE = [
-  'django.middleware.security.SecurityMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  'corsheaders.middleware.CorsMiddleware',
 ]
 
 
