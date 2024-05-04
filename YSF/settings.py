@@ -137,6 +137,12 @@ CORS_ALLOW_METHOD = [
     'GET', 'POST', 'PUT', 'DELETE'
 ]
 
+MIDDLEWARE = [
+  'django.middleware.security.SecurityMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'corsheaders.middleware.CorsMiddleware',
+]
+
 
 REST_FRAMEWORK = {
     # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication')
