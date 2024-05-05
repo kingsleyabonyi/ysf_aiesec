@@ -10,7 +10,7 @@ class User(models.Model):
     university = models.CharField(max_length=100)
     age_range = models.CharField(max_length=10)
     sdg_interest = models.CharField(max_length=100)
-    attendance_type = models.CharField(max_length=10, choices=(('Physical', 'Physical'), ('Virtual', 'Virtual')))
+    attendance_type = models.CharField(max_length=100)
     accommodation_needed = models.BooleanField()
     academic_level = models.CharField(max_length=50)
     academic_major = models.CharField(max_length=100)
@@ -18,6 +18,11 @@ class User(models.Model):
     contact_preference = models.CharField(max_length=200)
     employment_status = models.CharField(max_length=100)
     expectations = models.TextField()
-    shirt_size = models.CharField(max_length=2, choices=(('S', 'Small'), ('M', 'Medium'), ('L', 'Large'), ('XL', 'Extra Large')))
+    shirt_size = models.CharField(max_length=100)
+
+
+
+    def __str__(self):
+        return self.first_name
 
 

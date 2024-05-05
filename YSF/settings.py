@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     # 'knox',
+    'gsheets'
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,10 @@ CORS_ORIGIN_WHITELIST = [
 CORS_ALLOW_METHOD = [
     'GET', 'POST', 'PUT', 'DELETE'
 ]
+
+GSHEETS = {
+    'CLIENT_SECRETS': '<PATH TO DOWNLOADED CREDENTIALS>'
+}
 
 
 REST_FRAMEWORK = {
