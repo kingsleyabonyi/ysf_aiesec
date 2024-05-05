@@ -20,5 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/' ,include('ysf_backend.urls')),
-    path('', include('gsheets.urls')),
+    # path('', include('gsheets.urls')),
 ]
