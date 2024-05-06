@@ -17,4 +17,12 @@ class UserCreateView(APIView):
     
 
 
+# from .utils import get_gspread_client  # Assuming helper function location
 
+# class GoogleSheetView(APIView):
+#   def get(self, request):
+#     gc = get_gspread_client()  # Get authorized client
+#     worksheet = gc.open_by_key('YOUR_SPREADSHEET_KEY').sheet1  # Access specific sheet
+#     data = worksheet.get_all_records()  # Fetch data as a list of dictionaries
+
+#     return Response(data)
