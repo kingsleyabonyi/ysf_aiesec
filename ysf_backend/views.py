@@ -16,7 +16,7 @@ class UserCreateView(APIView):
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
             # add credentials to the account
-            creds = ServiceAccountCredentials.from_json_keyfile_name('apikey.json', scope)
+            creds = ServiceAccountCredentials.from_json_keyfile_name(r'c:\Users\nnamdiabonyi\Downloads\apikey.json', scope)
 
             # authorize the clientsheet 
             client = gspread.authorize(creds)
