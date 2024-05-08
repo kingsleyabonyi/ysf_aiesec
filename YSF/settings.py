@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     # 'knox',
-    'gsheets'
+    'gsheets',
+    'gspreed',
 ]
 
 MIDDLEWARE = [
@@ -53,8 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
-  'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'YSF.urls'
@@ -141,34 +142,7 @@ CORS_ALLOW_METHOD = [
     'GET', 'POST', 'PUT', 'DELETE'
 ]
 
-# GSHEETS = {
-#     'CLIENT_SECRETS': '<PATH TO DOWNLOADED CREDENTIALS>'
-# }
 
-# GOOGLE_APPLICATION_CREDENTIALS = os.path.join(BASE_DIR, 'c:\Users\nnamdiabonyi\Downloads\disco-portal-422501-b0-d2fb7f04c029.json')
-
-# import google.auth
-
-# # Authenticate using the service account credentials
-# project_id = google.auth.default()
-
-# # Optional: Set the API scope for more granular control
-# SCOPES = ['https://www.googleapis.com/auth/spreadsheets']  # Read/write access to spreadsheets
-
-
-import os
-# from decouple import config  # Assuming using decouple for environment variables
-
-# ... other settings
-
-# Google Sheets Authentication (using decouple)
-GOOGLE_OAUTH_SCOPES = [
-    'https://spreadsheets.google.com/feeds',
-    'https://www.googleapis.com/auth/spreadsheets',
-    'https://www.googleapis.com/auth/drive.file',
-    'https://www.googleapis.com/auth/drive',
-]
-GOOGLE_CREDENTIALS_PATH = os.path.join(BASE_DIR, r'c:\Users\nnamdiabonyi\Downloads\dc:\Users\nnamdiabonyi\Downloads\apikey.json')  # Assuming JSON file location
 REST_FRAMEWORK = {
     # 'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication')
 }
