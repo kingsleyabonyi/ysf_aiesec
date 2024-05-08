@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # 'knox',
     'gsheets',
-    'gspreed',
+    'gspread',
 ]
 
 MIDDLEWARE = [

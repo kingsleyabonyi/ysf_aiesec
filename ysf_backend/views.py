@@ -4,7 +4,8 @@ from rest_framework import status
 from .serializers import UserSerializer
 from rest_framework.permissions import AllowAny
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+# from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 
 class UserCreateView(APIView):
     permission_classes = [AllowAny]
@@ -15,11 +16,13 @@ class UserCreateView(APIView):
             # define the scope
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
-            # add credentials to the account
-            creds = ServiceAccountCredentials.from_json_keyfile_name(r'c:\Users\nnamdiabonyi\Downloads\apikey.json', scope)
+            credential_file = r'c:\Users\nnamdiabonyi\Downloads\apikey.json'
 
-            # authorize the clientsheet 
-            client = gspread.authorize(creds)
+            # add credentials to the account
+            creds = Credentials.from_service_account_file(credential_file, scopes=scope)
+
+            # authorize the clientsheet
+            client = gspread.Client(auth=creds)
 
             # get the instance of the Spreadsheet
             sheet = client.open('Sample_sheet')
