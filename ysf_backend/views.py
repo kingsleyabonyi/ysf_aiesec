@@ -4,7 +4,6 @@ from rest_framework import status
 from .serializers import UserSerializer
 from rest_framework.permissions import AllowAny
 import gspread
-import os
 from oauth2client.service_account import ServiceAccountCredentials
 # from google.oauth2.service_account import Credentials
 
@@ -17,7 +16,7 @@ class UserCreateView(APIView):
             # define the scope
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
-            credential_file =os.environ.get('API_KEY') 
+            credential_file = 'apikey.json'
 
             # add credentials to the account
             creds = ServiceAccountCredentials.from_json_keyfile_name(credential_file, scopes=scope)
