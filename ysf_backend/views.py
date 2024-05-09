@@ -17,7 +17,7 @@ class UserCreateView(APIView):
             # define the scope
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 
-            credential_file = r'c:\Users\nnamdiabonyi\Downloads\apikey.json'
+            credential_file =os.environ.get('API_KEY') 
 
             # add credentials to the account
             creds = ServiceAccountCredentials.from_json_keyfile_name(credential_file, scopes=scope)
