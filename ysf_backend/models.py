@@ -11,7 +11,7 @@ class User(models.Model):
     age_range = models.CharField(max_length=10)
     sdg_interest = models.CharField(max_length=100)
     attendance_type = models.CharField(max_length=100)
-    accommodation_needed = models.BooleanField()
+    # accommodation_needed = models.BooleanField()
     academic_level = models.CharField(max_length=50)
     academic_major = models.CharField(max_length=100)
     how_hear_about_ysf = models.CharField(max_length=200)
