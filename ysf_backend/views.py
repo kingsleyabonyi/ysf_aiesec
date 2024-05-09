@@ -4,8 +4,8 @@ from rest_framework import status
 from .serializers import UserSerializer
 from rest_framework.permissions import AllowAny
 import gspread
-# from oauth2client.service_account import ServiceAccountCredentials
-from google.oauth2.service_account import Credentials
+from oauth2client.service_account import ServiceAccountCredentials
+# from google.oauth2.service_account import Credentials
 
 class UserCreateView(APIView):
     permission_classes = [AllowAny]
@@ -19,10 +19,10 @@ class UserCreateView(APIView):
             credential_file = r'c:\Users\nnamdiabonyi\Downloads\apikey.json'
 
             # add credentials to the account
-            creds = Credentials.from_service_account_file(credential_file, scopes=scope)
+            creds = ServiceAccountCredentials.from_json_keyfile_name(credential_file, scopes=scope)
 
             # authorize the clientsheet
-            client = gspread.Client(auth=creds)
+            client = gspread.authorize(creds)
 
             # get the instance of the Spreadsheet
             sheet = client.open('Sample_sheet')
